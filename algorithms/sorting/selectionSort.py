@@ -3,7 +3,7 @@
 # author:alisen
 # time: 2019-11-27 21:29
 
-'''
+''' 一、
     选择排序
         最原始最传统的排序方法 时间复杂度 O(n^2) 空间复杂度 O(n)
 
@@ -41,7 +41,8 @@ if __name__ == '__main__':
     # arr = [1]
     # arr = [2, 1]
     # arr = [1, 2]
-    arr = [92, 1, 21, 10, 0, -10, -1, 101, 2, 2, 10]
-
+    # arr = [92, 1, 21, 10, 0, -10, -1, 101, 2, 2, 10]
+    import random
+    arr = [random.randint(-10000,10000) for i in range(1000)]
     res = Solution().selection(arr)
     print(res)
