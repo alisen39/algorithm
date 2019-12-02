@@ -37,11 +37,10 @@ class Solution:
         while True:
             if start == end:
                 break
-
-            if isBadVersion(int((start+end)/2)):
-                end = int((start+end)/2)
+            if isBadVersion((start + end) >> 1):
+                end = (start + end) >> 1
             else:
-                start = int((start+end)/2)+1
+                start = ((start + end) >> 1) + 1
 
         return start
 
