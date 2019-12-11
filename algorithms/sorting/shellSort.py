@@ -20,23 +20,33 @@ class Solution:
         while gap < len(disorder_arr) / 3:
             gap = 3 * gap + 1
 
-        # while gap > 1:
-        #     for i in range
-        #     disorder_arr[]
+        while gap >= 1:
+            for i in range(gap, len(disorder_arr)):
+                if disorder_arr[i] > disorder_arr[i - gap]:
+                    continue
 
-            gap = (gap - 1) / 3
+                j = i
+                while j > 0 and disorder_arr[j] < disorder_arr[j - gap]:
+                    disorder_arr[j], disorder_arr[j - gap] = disorder_arr[j - gap], disorder_arr[j]
 
-    def insertion(self, disorder_arr: list):
-
-        for i in range(1, len(disorder_arr)):
-
-            if disorder_arr[i] > disorder_arr[i - 1]:
-                continue
-
-            for j in range(i):
-                if disorder_arr[i] < disorder_arr[j]:
-                    disorder_arr.insert(j, disorder_arr.pop(i))
+                    j -= gap
+                print(disorder_arr)
+            print(gap)
+            gap = int((gap - 1) / 3)
         return disorder_arr
+
+    # def insertion(self, disorder_arr: list):
+    #
+    #     for i in range(1, len(disorder_arr)):
+    #
+    #         if disorder_arr[i] > disorder_arr[i - 1]:
+    #             continue
+    #
+    #         for j in range(i):
+    #             if disorder_arr[i] < disorder_arr[j]:
+    #                 disorder_arr.insert(j, disorder_arr.pop(i))
+    #
+    #     return disorder_arr
 
 
 if __name__ == '__main__':
@@ -47,9 +57,9 @@ if __name__ == '__main__':
     # arr = [1]
     # arr = [2, 1]
     # arr = [1, 2]
-    arr = [92, 1, 21, 10, 0, -10, -1, 101, 2, 2, 10]
+    # arr = [92, 1, 21, 10, 0, -10, -1, 101, 2, 2, 10]
 
-    # arr = [random.randint(-10000, 10000) for i in range(100000)]
+    arr = [random.randint(-10000, 10000) for i in range(100000)]
     res = Solution().shell(arr.copy())
 
     # s1_time = time.time()
@@ -57,4 +67,4 @@ if __name__ == '__main__':
     # # print(res)
     # print('s1 speed time:', time.time() - s1_time)
 
-    # print(res)
+    print(res)
