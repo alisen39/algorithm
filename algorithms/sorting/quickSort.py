@@ -14,19 +14,19 @@ class Solution:
 
     def quick(self, disorder_arr: list):
         # 递归实现
-        if len(disorder_arr) < 2:
+        if len(disorder_arr) < 2: # 基线条件
             return disorder_arr
 
-        base_num = disorder_arr[0]
-        min_arr = []
-        max_arr = []
-        for i in range(1, len(disorder_arr)):
+        base_num = disorder_arr[0] # 基数，取数组第一个数
+        min_arr = [] # 小于基数的数
+        max_arr = [] # 大于基数的数
+        for i in range(1, len(disorder_arr)): # 遍历一遍数组，
             if disorder_arr[i] <= base_num:
                 min_arr.append(disorder_arr[i])
             elif disorder_arr[i] > base_num:
                 max_arr.append(disorder_arr[i])
 
-        return self.quick(min_arr) + [base_num] + self.quick(max_arr)
+        return self.quick(min_arr) + [base_num] + self.quick(max_arr) # 递归
 
 
 if __name__ == '__main__':
