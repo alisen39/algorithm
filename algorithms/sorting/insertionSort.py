@@ -12,12 +12,12 @@
 class Solution:
     def insertion(self, disorder_arr: list):
 
-        for i in range(1, len(disorder_arr)):
+        for i in range(1, len(disorder_arr)):  # 从第二个元素开始
 
-            if disorder_arr[i] > disorder_arr[i - 1]:
+            if disorder_arr[i] > disorder_arr[i - 1]:  # 判断当前元素与前一个元素的大小
                 continue
 
-            for j in range(i):
+            for j in range(i):  # 遍历当前元素之前的元素（有序），找到插入点插入
                 if disorder_arr[i] < disorder_arr[j]:
                     disorder_arr.insert(j, disorder_arr.pop(i))
         return disorder_arr
