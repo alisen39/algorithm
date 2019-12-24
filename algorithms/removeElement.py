@@ -6,23 +6,34 @@
     移除元素
     https://leetcode-cn.com/problems/remove-element/submissions/
 '''
-class Solution:
-    def removeElement(self, nums: list, val: int) -> int:
 
+
+class Solution:
+    # def removeElement(self, nums: list, val: int) -> int:
+    #
+    #     p = 0
+    #     while p < len(nums):
+    #         if nums[p] == val:
+    #             nums.pop(p)
+    #         else:
+    #             p+=1
+    #     return p
+
+    def removeElement(self, nums: list, val: int) -> int:
         p = 0
-        while p < len(nums):
-            if nums[p] == val:
-                nums.pop(p)
-            else:
-                p+=1
+
+        for i in range(0, len(nums)):
+            if nums[i] != val:
+                nums[p] = nums[i]
+                p += 1
         return p
 
+
 if __name__ == '__main__':
-    arr = [0,1,2,2,3,0,4,2]
-    arr = [3,2,2,3]
-    # arr = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
+    # arr = [0, 1, 2, 2, 3, 0, 4, 2]
+    # arr = [3, 2, 2, 3]
+    arr = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
     # arr = [0, 0, 0]
 
-    res = Solution().removeElement(arr,3)
+    res = Solution().removeElement(arr, 3)
     print(res)
-
