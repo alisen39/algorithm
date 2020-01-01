@@ -6,7 +6,7 @@
 
 '''
     搜索插入位置
-    https://leetcode-cn.com/problems/search-insert-position/solution/er-fen-cha-zhao-bian-jie-jie-shi-qing-song-zhang-w/
+    https://leetcode-cn.com/problems/search-insert-position
 '''
 
 
