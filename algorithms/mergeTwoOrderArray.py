@@ -34,6 +34,31 @@ class Solution:
 
         print(nums1)
 
+    def mergeTowOrderArr(self, arr1: list, arr2: list):
+        newArr = []
+        a1_p = 0
+        a2_p = 0
+        if len(arr1) == 0:
+            return arr2
+        if len(arr2) == 0:
+            return arr1
+
+        for i in range(len(arr1) + len(arr2)):
+            if arr1[a1_p] <= arr2[a2_p]:
+                newArr.append(arr1[a1_p])
+                a1_p += 1
+            else:
+                newArr.append(arr2[a2_p])
+                a2_p += 1
+
+            if a1_p >= len(arr1):
+                newArr += arr2[a2_p:]
+                break
+            if a2_p >= len(arr2):
+                newArr += arr1[a1_p:]
+                break
+        return newArr
+
 
 if __name__ == '__main__':
     # nums1 = [1, 2, 3, 0, 0, 0]
