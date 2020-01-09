@@ -2,7 +2,10 @@
 # encoding: utf-8
 # author:alisen
 # time: 2020-01-09 22:57
-
+'''
+    69. x 的平方根
+    https://leetcode-cn.com/problems/sqrtx/submissions/
+'''
 class Solution:
     def mySqrt(self, x: int) -> int:
         left = 0
