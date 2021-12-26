@@ -10,6 +10,7 @@
 
 
 class Solution:
+    int
     # def plusOne(self, digits: list):
     #     for i in range(len(digits)):
     #         idx = len(digits) - i - 1

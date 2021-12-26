@@ -7,21 +7,40 @@ class ListNode:
         self.val = x
         self.next = None
 
+
 class Solution:
     def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
-        l1_add = 0
-        l2_add = 0
-        for index, num in l1:
-            l1_add += num * (10 ** index)
-        for index, num in l2:
-            l2_add += num * (10 ** index)
+        res = ListNode(0)
+        r = ListNode(0)
 
-        lsum = l1_add+l2_add
+        # carry = 0
+        # while l1 or l2:
+        pass
 
-        return [int(x) for x in str(lsum)].reverse()
+
+
+
+
+        # i+=1
+
 
 
 if __name__ == '__main__':
-    l1 = [2, 4, 3]
-    l2 = [5, 6, 4]
-    Solution().addTwoNumbers(l1, l2)
+    l1 = ListNode(2)
+    l2 = ListNode(4)
+    l3 = ListNode(5)
+
+    l1.next = l2
+    l2.next = l3
+
+    n1 = ListNode(5)
+    n2 = ListNode(6)
+    n3 = ListNode(4)
+    n1.next = n2
+    n2.next = n3
+
+    res = Solution().addTwoNumbers(l1, n1)
+    print(res)
+    # l1 = [2, 4, 3]
+    # l2 = [5, 6, 4]
+    # Solution().addTwoNumbers(l1, l2)
