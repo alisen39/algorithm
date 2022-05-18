@@ -6,13 +6,14 @@
 """ 剑指 Offer 09. 用两个栈实现队列
 https://leetcode.cn/problems/yong-liang-ge-zhan-shi-xian-dui-lie-lcof/
 """
+from collections import deque
 
 
 class CQueue:
 
     def __init__(self):
-        self.in_stack = []
-        self.out_stack = []
+        self.in_stack = deque([])
+        self.out_stack = deque([])
 
     def appendTail(self, value: int) -> None:
         self.in_stack.append(value)
