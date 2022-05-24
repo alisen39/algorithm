@@ -10,11 +10,16 @@ https://leetcode.cn/problems/ti-huan-kong-ge-lcof/
 
 class Solution:
     def replaceSpace(self, s: str) -> str:
-        return s.replace(' ', '%20')
+        r = ''
+        for i in s:
+            if i == ' ':
+                i = '%20'
+            r += i
+        return r
 
 
 if __name__ == '__main__':
     a = 'x a xxx'
-    a = '    '
+    # a = '    '
     res = Solution().replaceSpace(a)
     print(res)
