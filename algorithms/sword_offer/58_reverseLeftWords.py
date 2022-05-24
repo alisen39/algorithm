@@ -10,7 +10,12 @@ https://leetcode.cn/problems/zuo-xuan-zhuan-zi-fu-chuan-lcof/
 
 class Solution:
     def reverseLeftWords(self, s: str, n: int) -> str:
-        return s[n:] + s[:n]
+        for i in range(len(s)):
+            if i < n:
+                s += s[i]
+            else:
+                break
+        return s[n:]
 
 
 if __name__ == '__main__':
