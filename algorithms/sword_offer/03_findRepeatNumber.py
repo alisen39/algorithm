@@ -11,15 +11,16 @@ from typing import List
 
 class Solution:
     def findRepeatNumber(self, nums: List[int]) -> int:
-        s = set()
+        nums.sort()
+        per = None
         for i in nums:
-            if i in s:
+            if i == per:
                 return i
             else:
-                s.add(i)
+                per = i
 
 
 if __name__ == '__main__':
-    nums = [1, 2, 21, 11]
+    nums = [1, 2, 21, 11, 1]
     res = Solution().findRepeatNumber(nums)
     print(res)
