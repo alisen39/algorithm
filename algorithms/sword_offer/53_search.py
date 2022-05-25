@@ -10,6 +10,7 @@ from typing import List
 
 
 class Solution:
+    # TODO 可用二分法
     def search(self, nums: List[int], target: int) -> int:
         cnt = 0
         for num in nums:
