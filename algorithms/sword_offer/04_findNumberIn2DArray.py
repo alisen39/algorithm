@@ -11,16 +11,19 @@ from typing import List
 
 class Solution:
     def findNumberIn2DArray(self, matrix: List[List[int]], target: int) -> bool:
-        for list1 in matrix:
-            if not list1:
-                continue
-            if target < list1[0] or target > list1[-1]:
-                continue
-            for i in list1:
-                if i == target:
-                    return True
-        return False
+        if not matrix:
+            return False
+        x, y = 0, len(matrix[0])-1
+        while True:
+            if x > len(matrix)-1 or y < 0:
+                return False
 
+            if target == matrix[x][y]:
+                return True
+            elif target < matrix[x][y]:
+                y -= 1
+            elif target > matrix[x][y]:
+                x += 1
 
 
 if __name__ == '__main__':
@@ -31,5 +34,6 @@ if __name__ == '__main__':
         [10, 13, 14, 17, 24],
         [18, 21, 23, 26, 30]
     ]
-    r = Solution().findNumberIn2DArray(arr, target=100)
+    arr = []
+    r = Solution().findNumberIn2DArray(arr, target=31)
     print(r)
