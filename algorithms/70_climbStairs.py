@@ -3,16 +3,18 @@
 # author:alisen
 # time: 2022年06月28日 星期二
 # desc:
+from functools import lru_cache
+
 
 class Solution:
+    @lru_cache()
     def climbStairs(self, n: int) -> int:
-        arr = [1, 2, 3]
-        if n < 3:
-            return arr[n - 1]
-        for i in range(n - 3):
-            arr.append(arr[1] + arr[2])
-            arr.pop(0)
-        return arr[2]
+        if n <= 1:
+            return 1
+        elif n == 2:
+            return 2
+        else:
+            return self.climbStairs(n - 1) + self.climbStairs(n - 2)
 
 
 if __name__ == '__main__':
@@ -22,4 +24,4 @@ if __name__ == '__main__':
     print(s.climbStairs(2))
     print(s.climbStairs(3))
     print(s.climbStairs(4))
-    print(s.climbStairs(10))
+    print(s.climbStairs(44))
