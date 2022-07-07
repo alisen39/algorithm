@@ -22,16 +22,10 @@ class Solution:
     #         return self.fib(n - 1) + self.fib(n - 2)%1000000007
 
     def numWays(self, n: int) -> int:
-        a, b, c = 1, 2, 0
-        if n == 0:
-            return 1
-        elif n <= 2:
-            return n
-        while n > 2:
-            c = a + b
-            a, b = b, c
-            n -= 1
-        return c % 1000000007
+        a, b = 1, 1
+        for _ in range(1, n):
+            a, b = b, a + b
+        return b % 1000000007
 
 
 if __name__ == '__main__':
