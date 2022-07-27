@@ -16,20 +16,39 @@ class ListNode:
         self.next = None
 
 
+# class Solution:
+#     """神奇的题解，本地不过，leetcode上却能过"""
+#     def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> ListNode:
+#         htb = set()
+#         tmp = headA
+#         while tmp:
+#             htb.add(tmp)
+#             tmp = tmp.next
+#
+#         tmp = headB
+#         while tmp:
+#             if tmp in htb:
+#                 return tmp
+#             tmp = tmp.next
+
+
 class Solution:
     def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> ListNode:
-        htb = set()
-        tmp = headA
-        while tmp:
-            htb.add(tmp)
-            tmp = tmp.next
+        """
+        双指针法
+        把数组变成这样就容易理解了：
+         0 9 1 2 4  3 2 4
+         3 2 4  0 9 1 2 4
+        """
 
-        tmp = headB
-        while tmp:
-            if tmp in htb:
-                return tmp
-            tmp = tmp.next
+        pA = headA
+        pB = headB
+        while pA != pB:  # 比较的是一整个链表,结束条件是两个一起遍历完后，next同时为None
+            print(pA.val if pA else None)
+            pA = pA.next if pA else headB
+            pB = pB.next if pB else headA
 
+        return pA
 
 
 if __name__ == '__main__':
